@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const PHOTOS_ROOT = "D:/AQUAPARK_PHOTOS";
+const PHOTOS_ROOT = path.resolve(__dirname, "../../AQUAPARK_PHOTOS");
 let cachedFolders = [];
 let lastLoaded = 0;
 

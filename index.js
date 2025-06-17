@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const folderRoutes = require("./routes/folderRoutes");
 const cors = require("cors");
 const port = process.env.PORT || 5000;
@@ -7,7 +8,11 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/photos", express.static("D:/AQUAPARK_PHOTOS"));
+const photosPath = path.resolve(__dirname, "../AQUAPARK_PHOTOS");
+
+app.use("/photos", express.static(photosPath));
+
+console.log("Serving photos from:", photosPath);
 
 app.use("/api", folderRoutes);
 
