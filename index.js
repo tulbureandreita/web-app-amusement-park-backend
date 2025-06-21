@@ -9,10 +9,10 @@ app.use(cors());
 app.use(express.json());
 
 const photosPath = path.resolve(__dirname, "../AQUAPARK_PHOTOS");
-
 app.use("/photos", express.static(photosPath));
 
-console.log("Serving photos from:", photosPath);
+// const cameraRoute = require("./routes/camera");
+// app.use("/camera", cameraRoute);
 
 app.use("/api", folderRoutes);
 
